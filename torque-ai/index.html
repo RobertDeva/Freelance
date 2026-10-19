@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101b2a">
+<meta name="description" content="Demo interactiva de un agente de IA para citas, reseñas y atención al cliente de un taller automotriz.">
+<title>Torque AI · Asistente del taller</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="demo-ribbon">DEMO INTERACTIVA · DATOS FICTICIOS · NO CONECTADA A SERVICIOS REALES</div>
+<div class="app">
+<aside>
+  <a class="brand" href="#inicio" aria-label="Torque AI inicio"><span class="brand-icon">T.</span><span class="brand-name">TORQUE AI<small>ASISTENTE DE TALLER</small></span></a>
+  <div class="side-label">ESPACIO DE TRABAJO</div>
+  <nav class="nav" aria-label="Menú principal">
+    <button class="active" data-view="dashboard"><span class="ico">▦</span><span class="label">Resumen</span></button>
+    <button data-view="appointments"><span class="ico">▣</span><span class="label">Citas</span></button>
+    <button data-view="reviews"><span class="ico">☆</span><span class="label">Reseñas</span></button>
+    <button data-view="inbox"><span class="ico">◌</span><span class="label">Atención al cliente</span></button>
+  </nav>
+  <div class="side-bottom"><span class="status-dot"></span> AGENTE EN MODO DEMO<strong>Torque Assistant</strong><p>Organiza solicitudes, prepara respuestas y ayuda a dar seguimiento a cada cliente.</p></div>
+</aside>
+<div class="main">
+<header class="topbar"><div class="crumb">Taller / <strong id="crumb-label">Resumen</strong></div><div class="top-actions"><span class="demo-status"><span class="status-dot"></span> Simulación activa</span><div class="avatar" title="Taller de ejemplo">TA</div></div></header>
+<main class="content">
+<section class="page-view active" id="view-dashboard">
+<div class="page-head"><div><p class="eyebrow">LUNES · CENTRO DE OPERACIONES</p><h1>Buenos días, equipo 👋</h1><p class="subhead">Tu agente reúne las citas, los comentarios y las conversaciones en un solo lugar.</p></div><button class="btn btn-primary" data-open-modal>＋ Agendar cita</button></div>
+<div class="stats">
+<div class="stat"><div class="stat-top">Citas para hoy <span class="stat-icon">▣</span></div><div class="stat-value" id="stat-today">8</div><div class="stat-note"><strong>+2</strong> solicitudes por confirmar</div></div>
+<div class="stat"><div class="stat-top">Pendientes de respuesta <span class="stat-icon">◌</span></div><div class="stat-value" id="stat-pending">3</div><div class="stat-note">Mensajes que requieren atención</div></div>
+<div class="stat"><div class="stat-top">Valoración media <span class="stat-icon">☆</span></div><div class="stat-value">4.8<span style="font-size:15px;color:#d28a16"> ★</span></div><div class="stat-note">Reseñas de ejemplo</div></div>
+<div class="stat"><div class="stat-top">Seguimientos sugeridos <span class="stat-icon">↗</span></div><div class="stat-value" id="stat-followups">5</div><div class="stat-note">Para solicitar opinión tras el servicio</div></div>
+</div>
+<div class="dashboard-grid">
+<div class="card"><div class="card-head"><div><h2>Próximas citas</h2><p>Agenda de demostración · ordenada por hora</p></div><button class="btn btn-sm" data-goto="appointments">Ver agenda ↗</button></div><div class="appointment-list" id="dashboard-appointments"></div></div>
+<div class="card agent-card"><div class="card-head"><div><div class="agent-pulse"><span class="status-dot"></span> TORQUE ASSISTANT</div><h2 style="margin-top:12px">Tu copiloto operativo</h2><p>Actividad automatizada (simulada)</p></div><span style="font-size:27px;position:relative;z-index:1">✳</span></div><p class="agent-summary">El agente puede clasificar solicitudes, proponer horarios disponibles, redactar respuestas y preparar mensajes de seguimiento. En esta demo, las acciones se ejecutan solo dentro de esta página.</p><div class="agent-task"><span class="task-check">✓</span><span><strong>Agenda:</strong> detectar solapamientos y ordenar solicitudes.</span></div><div class="agent-task"><span class="task-check">✓</span><span><strong>Reputación:</strong> preparar solicitudes de reseña después de una visita.</span></div><div class="agent-task"><span class="task-check">✓</span><span><strong>Atención:</strong> sugerir respuestas a preguntas frecuentes.</span></div><button class="btn" id="run-agent">▶ Ejecutar revisión de ejemplo</button></div>
+</div>
+<div class="lower-grid">
+<div class="card"><div class="card-head"><div><h2>Últimas reseñas</h2><p>Comentarios ficticios de clientes</p></div><button class="btn btn-sm" data-goto="reviews">Gestionar ↗</button></div><div id="dashboard-reviews"></div></div>
+<div class="card"><div class="card-head"><div><h2>Atención al cliente</h2><p>Conversaciones recientes</p></div><button class="btn btn-sm" data-goto="inbox">Abrir bandeja ↗</button></div><div class="chat-preview" id="dashboard-chats"></div></div>
+</div>
+<p class="footnote">Este panel es un prototipo visual. No envía SMS, correos, mensajes de WhatsApp, solicitudes reales de reseñas ni modifica un calendario externo.</p>
+</section>
+<section class="page-view" id="view-appointments">
+<div class="page-head"><div><p class="eyebrow">PLANIFICACIÓN</p><h1>Agenda de citas</h1><p class="subhead">Registra solicitudes, consulta el estado y evita solapamientos en el horario de ejemplo.</p></div><button class="btn btn-primary" data-open-modal>＋ Agendar cita</button></div>
+<div class="card"><div class="filter-row"><input class="search" id="appointment-search" placeholder="Buscar cliente, vehículo o servicio…" aria-label="Buscar citas"><select id="appointment-filter" aria-label="Filtrar por estado"><option value="all">Todos los estados</option><option value="Confirmada">Confirmada</option><option value="Pendiente">Pendiente</option><option value="En taller">En taller</option></select></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Hora / fecha</th><th>Cliente</th><th>Vehículo / servicio</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="appointment-table"></tbody></table></div></div>
+<p class="footnote">Las citas nuevas se guardan solo en el almacenamiento local de este navegador. No se sincronizan con Google Calendar ni con un software de taller.</p>
+</section>
+<section class="page-view" id="view-reviews">
+<div class="page-head"><div><p class="eyebrow">REPUTACIÓN Y CONFIANZA</p><h1>Reseñas y seguimiento</h1><p class="subhead">Prepara solicitudes de opinión y respuestas profesionales sin presionar al cliente.</p></div><button class="btn btn-primary" id="review-followup">✉ Preparar seguimiento</button></div>
+<div class="stats"><div class="stat"><div class="stat-top">Valoración media <span class="stat-icon">☆</span></div><div class="stat-value">4.8 ★</div><div class="stat-note">Dato ilustrativo</div></div><div class="stat"><div class="stat-top">Reseñas en el panel <span class="stat-icon">☷</span></div><div class="stat-value" id="review-count">4</div><div class="stat-note">Opiniones de ejemplo</div></div><div class="stat"><div class="stat-top">Seguimientos sugeridos <span class="stat-icon">↗</span></div><div class="stat-value">5</div><div class="stat-note">Clientes simulados</div></div><div class="stat"><div class="stat-top">Respuesta sugerida <span class="stat-icon">✎</span></div><div class="stat-value">1 clic</div><div class="stat-note">Editable antes de enviar</div></div></div>
+<div class="card"><div class="card-head"><div><h2>Comentarios recientes</h2><p>Las respuestas se generan como borradores de demostración.</p></div><span class="badge green">● Seguimiento respetuoso</span></div><div class="review-cards" id="review-cards"></div></div>
+<p class="footnote">En una implementación real, las reseñas se leerían mediante integraciones autorizadas. No se publican opiniones ni se envían solicitudes desde esta demo.</p>
+</section>
+<section class="page-view" id="view-inbox">
+<div class="page-head"><div><p class="eyebrow">CENTRO DE CONVERSACIONES</p><h1>Atención al cliente</h1><p class="subhead">Consulta preguntas frecuentes y prueba respuestas sugeridas por el agente.</p></div><span class="badge blue">Agente asistente · demo</span></div>
+<div class="card"><div class="inbox-layout"><div class="thread-list" id="thread-list"></div><div class="thread-detail"><div class="thread-title" id="thread-title"><strong>Selecciona una conversación</strong></div><div class="messages" id="messages"></div><form class="chat-compose" id="chat-form"><input id="chat-input" placeholder="Escribe una respuesta de prueba…" aria-label="Mensaje de respuesta" required><button class="btn btn-primary" type="submit">Enviar</button></form></div></div></div>
+<div class="card" style="margin-top:16px"><div class="card-head"><div><h2>Respuestas rápidas</h2><p>Selecciona un tema para preparar una respuesta editable.</p></div></div><div class="filter-row"><button class="btn quick-reply" data-topic="price">💵 Precio y presupuesto</button><button class="btn quick-reply" data-topic="hours">◷ Horarios</button><button class="btn quick-reply" data-topic="status">🔧 Estado del vehículo</button><button class="btn quick-reply" data-topic="warranty">✓ Garantía del trabajo</button></div></div>
+<p class="footnote">La respuesta automática real requiere reglas de negocio, canales conectados, consentimiento y supervisión humana. Esta demo no se conecta a WhatsApp ni a correo.</p>
+</section>
+</main>
+</div>
+</div>
+<div class="modal-backdrop" id="appointment-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal"><div class="modal-head"><div><h2 id="modal-title">Agendar una cita</h2><p>Registra una cita ficticia para probar el flujo.</p></div><button class="close-btn" id="modal-close" aria-label="Cerrar">×</button></div>
+<form id="appointment-form"><div class="form-grid"><div class="field"><label for="customer-name">Nombre del cliente *</label><input id="customer-name" name="customer" required placeholder="Ej. Alex Rivera"></div><div class="field"><label for="customer-phone">Teléfono (opcional)</label><input id="customer-phone" name="phone" type="tel" placeholder="+1 555 0100"></div><div class="field"><label for="car">Vehículo *</label><input id="car" name="car" required placeholder="Ej. Toyota Corolla 2018"></div><div class="field"><label for="service">Servicio *</label><select id="service" name="service" required><option value="">Seleccionar…</option><option>Cambio de aceite</option><option>Diagnóstico del motor</option><option>Frenos</option><option>Neumáticos</option><option>Mantenimiento general</option><option>Otro servicio</option></select></div><div class="field"><label for="appointment-date">Fecha *</label><input id="appointment-date" name="date" type="date" required></div><div class="field"><label for="appointment-time">Hora *</label><select id="appointment-time" name="time" required><option value="">Seleccionar…</option><option>08:00</option><option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option></select></div><div class="field full"><label for="notes">Notas para el mecánico</label><textarea id="notes" name="notes" rows="2" placeholder="Síntomas, solicitudes o detalles (opcional)"></textarea><small>La demo comprueba conflictos de fecha y hora entre las citas que registres.</small></div></div><div class="modal-actions"><button type="button" class="btn" id="modal-cancel">Cancelar</button><button class="btn btn-primary" type="submit">Guardar cita de prueba</button></div></form></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/main.js" defer></script>
+</body>
+</html>
