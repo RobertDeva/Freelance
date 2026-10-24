@@ -2,19 +2,23 @@
 
 Esta carpeta contiene el plan para convertir el portafolio en un negocio freelance de coste inicial cero.
 
-## Orden de trabajo
-
+## Documentos
 1. [Plan de 90 días](PLAN-90-DIAS.md)
 2. [Ofertas y precios de prueba](OFERTAS-Y-PRECIOS.md)
 3. [Seguimiento comercial](SEGUIMIENTO-COMERCIAL.md)
+4. [Mensajes para Telegram y correo](MENSAJES-CAPTACION.md)
+5. [Verificación de cobros](COMPATIBILIDAD-COBROS.md)
+6. [Registro comercial local](seguimiento/index.html)
 
 ## Estado actual
-
-- Portafolio de demos en `feature/functional-three-demos`.
-- Plan comercial en `feature/monetization-zero-budget`.
-- Sin cambios en `main`.
-- Las demos son prototipos de navegador y no deben venderse como integraciones de producción.
+- Portafolio de tres demos en `feature/functional-three-demos`.
+- Plan comercial y herramienta de seguimiento en `feature/monetization-zero-budget`.
+- No se han modificado archivos de `main`.
+- No se ha conectado ni probado una pasarela de pago en producción.
+- QvaPay y criptomonedas quedan pendientes de validar para la cuenta, residencia, operación y retirada específicas.
 
 ## Siguiente hito
-
-Revisar el portafolio desde móvil y escritorio, confirmar un método de cobro utilizable y comenzar una primera ronda de contactos personalizados. No contratar servicios de pago hasta validar interés comercial.
+1. Revisar las demos desde móvil y escritorio.
+2. Preparar una lista inicial de negocios y registrar solo los datos profesionales necesarios.
+3. Contactar de forma individual con mensajes personalizados.
+4. Confirmar el método de cobro antes de aceptar un contrato.
