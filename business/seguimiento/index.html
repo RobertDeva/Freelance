@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101b2a">
+<title>Seguimiento comercial · Robe Digital Studio</title>
+<style>
+:root{color-scheme:light;--bg:#f5f4f0;--ink:#172334;--muted:#64748b;--line:#dfe3e8;--dark:#101b2a;--accent:#c9f36a;--card:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:1100px;width:calc(100% - 28px);margin:auto}.top{padding:24px 0}.brand{font-weight:900;letter-spacing:-.04em}.brand span{display:inline-block;background:var(--accent);padding:5px 9px;border-radius:8px;margin-right:8px}.hero{padding:25px 0 18px}.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.04;letter-spacing:-.05em;margin:8px 0 12px}.hero p{color:var(--muted);max-width:720px}.notice{padding:13px 15px;background:#fff7df;border:1px solid #ead9a5;border-radius:12px;font-size:13px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.stat,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}.stat b{display:block;font-size:27px}.stat span,.muted{color:var(--muted);font-size:13px}.layout{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.5fr);gap:16px;margin-bottom:35px}.panel h2{margin:0 0 12px;font-size:19px}label{display:block;font-size:13px;font-weight:750;margin:12px 0 5px}input,select,textarea{width:100%;font:inherit;font-size:14px;padding:10px 11px;border:1px solid #cbd3dc;border-radius:9px;background:#fff;color:var(--ink)}textarea{min-height:75px;resize:vertical}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}button,.button{font:inherit;font-size:13px;font-weight:800;border:0;border-radius:9px;padding:10px 13px;background:var(--dark);color:white;cursor:pointer;text-decoration:none;display:inline-block}button.secondary,.button.secondary{background:#eef1f5;color:var(--ink);border:1px solid var(--line)}button.danger{background:#8e2e2e}.filters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}td button{padding:6px 8px;margin:2px}.empty{padding:22px;text-align:center;color:var(--muted)}.small{font-size:12px;color:var(--muted)}footer{padding:22px 0 40px;color:var(--muted);font-size:12px}@media(max-width:760px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stat{padding:12px}.filters{grid-template-columns:1fr}.hero{padding-top:10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand"><span>RD</span> ROBE DIGITAL STUDIO</div></header>
+<main>
+<section class="hero"><div class="muted">HERRAMIENTA LOCAL · SIN CUENTA · SIN SERVIDOR</div><h1>Seguimiento de clientes potenciales</h1><p>Organiza la prospección de Torque AI, Glow Desk y Café Bruma. Los registros permanecen en este navegador; no se envían a ningún servidor.</p><div class="notice"><strong>Privacidad:</strong> no guardes contraseñas, claves de pago, datos bancarios ni información sensible. Haz una exportación de respaldo con regularidad. Si borras los datos del navegador, los registros pueden perderse.</div></section>
+<section class="stats" aria-label="Resumen">
+<div class="stat"><b id="total">0</b><span>Contactos registrados</span></div><div class="stat"><b id="pending">0</b><span>Pendientes</span></div><div class="stat"><b id="replied">0</b><span>Respondieron</span></div><div class="stat"><b id="won">0</b><span>Ganados</span></div>
+</section>
+<div class="layout">
+<section class="panel"><h2 id="formTitle">Añadir negocio</h2><form id="leadForm">
+<input id="leadId" type="hidden">
+<label for="business">Nombre del negocio *</label><input id="business" required maxlength="120" placeholder="Ej. Taller El Motor">
+<label for="niche">Tipo de negocio</label><select id="niche"><option>Taller automotriz</option><option>Salón de belleza</option><option>Cafetería / restaurante</option><option>Otro pequeño negocio</option></select>
+<label for="demo">Oferta o demo relevante</label><select id="demo"><option>Torque AI</option><option>Glow Desk</option><option>Café Bruma</option><option>Web esencial</option></select>
+<label for="contact">Canal público de contacto</label><select id="contact"><option>Telegram</option><option>Correo electrónico</option><option>Formulario público</option><option>Otro</option></select>
+<label for="address">Usuario o correo profesional público</label><input id="address" maxlength="180" placeholder="@negocio o correo comercial">
+<label for="website">Sitio web público</label><input id="website" type="url" maxlength="300" placeholder="https://...">
+<label for="need">Necesidad observable</label><textarea id="need" maxlength="700" placeholder="Describe solo lo que has observado; no supongas."></textarea>
+<label for="status">Estado</label><select id="status"><option>Pendiente</option><option>Contactado</option><option>Respondió</option><option>Reunión</option><option>Propuesta enviada</option><option>Ganado</option><option>Perdido</option><option>No contactar</option></select>
+<label for="next">Próxima acción</label><input id="next" maxlength="300" placeholder="Ej. Enviar enlace a demo">
+<label for="follow">Fecha de seguimiento</label><input id="follow" type="date">
+<label for="value">Valor propuesto (USD; no es ingreso cobrado)</label><input id="value" type="number" min="0" step="0.01" placeholder="0.00">
+<div class="actions"><button type="submit" id="saveBtn">Guardar negocio</button><button type="button" class="secondary" id="resetBtn">Limpiar</button></div>
+<p class="small">Usa solo canales profesionales públicos. Respeta solicitudes de no contacto y las reglas de cada plataforma.</p>
+</form></section>
+<section class="panel"><h2>Lista de prospección</h2><div class="filters"><input id="search" placeholder="Buscar negocio o necesidad" aria-label="Buscar"><select id="filterStatus" aria-label="Filtrar por estado"><option value="">Todos los estados</option><option>Pendiente</option><option>Contactado</option><option>Respondió</option><option>Reunión</option><option>Propuesta enviada</option><option>Ganado</option><option>Perdido</option><option>No contactar</option></select></div>
+<div class="actions" style="margin:0 0 12px"><button id="exportBtn" type="button">Exportar CSV</button><button id="backupBtn" class="secondary" type="button">Descargar respaldo JSON</button><label class="button secondary" for="importFile" style="margin:0;cursor:pointer">Importar respaldo</label><input id="importFile" type="file" accept="application/json,.json" hidden></div>
+<div class="tablewrap"><table><thead><tr><th>Negocio / oferta</th><th>Estado / seguimiento</th><th>Acciones</th></tr></thead><tbody id="rows"></tbody></table><div id="empty" class="empty">Todavía no hay negocios. Añade el primero en el formulario.</div></div>
+<p class="small">El CSV se abre en una hoja de cálculo. Los registros se guardan en localStorage de este navegador y no se sincronizan con otros dispositivos.</p></section>
+</div>
+</main>
+<footer>Robe Digital Studio · herramienta de apoyo comercial · no procesa pagos ni envía mensajes.</footer>
+</div>
+<script>
+(function(){
+'use strict';
+const KEY='robe-digital-studio-prospects-v1';
+const $=id=>document.getElementById(id);
+let leads=load();
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(x)?x:[]}catch(_){return[]}}
+function persist(){localStorage.setItem(KEY,JSON.stringify(leads));render()}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function val(id){return $(id).value.trim()}
+function reset(){ $('leadForm').reset();$('leadId').value='';$('formTitle').textContent='Añadir negocio';$('saveBtn').textContent='Guardar negocio'}
+function formData(){return {business:val('business'),niche:val('niche'),demo:val('demo'),contact:val('contact'),address:val('address'),website:val('website'),need:val('need'),status:val('status'),next:val('next'),follow:val('follow'),value:val('value'),updatedAt:new Date().toISOString()}}
+$('leadForm').addEventListener('submit',e=>{e.preventDefault();const d=formData(),id=val('leadId');if(id){const i=leads.findIndex(x=>x.id===id);if(i>=0)leads[i]={...leads[i],...d}}else leads.unshift({...d,id:crypto.randomUUID?crypto.randomUUID():String(Date.now())+'-'+Math.random().toString(36).slice(2),createdAt:new Date().toISOString()});persist();reset()});
+$('resetBtn').addEventListener('click',reset);
+function edit(id){const x=leads.find(l=>l.id===id);if(!x)return;for(const k of ['business','niche','demo','contact','address','website','need','status','next','follow','value'])$(k).value=x[k]||'';$('leadId').value=x.id;$('formTitle').textContent='Editar negocio';$('saveBtn').textContent='Guardar cambios';window.scrollTo({top:0,behavior:'smooth'})}
+function remove(id){if(!confirm('¿Eliminar este registro local?'))return;leads=leads.filter(x=>x.id!==id);persist()}
+function render(){const q=$('search').value.toLowerCase(),st=$('filterStatus').value;const visible=leads.filter(x=>(!st||x.status===st)&&[x.business,x.niche,x.demo,x.need,x.address].join(' ').toLowerCase().includes(q));$('total').textContent=leads.length;$('pending').textContent=leads.filter(x=>['Pendiente','Contactado'].includes(x.status)).length;$('replied').textContent=leads.filter(x=>['Respondió','Reunión','Propuesta enviada'].includes(x.status)).length;$('won').textContent=leads.filter(x=>x.status==='Ganado').length;$('rows').innerHTML=visible.map(x=>'<tr><td><strong>'+esc(x.business)+'</strong><br><span class="small">'+esc(x.niche)+' · '+esc(x.demo)+'</span><br><span class="small">'+esc(x.address||'Sin contacto registrado')+'</span><br><span class="small">'+esc(x.need||'Sin necesidad anotada')+'</span></td><td>'+esc(x.status)+'<br><span class="small">Próximo paso: '+esc(x.next||'No definido')+'</span><br><span class="small">Fecha: '+esc(x.follow||'Sin fecha')+'</span></td><td><button type="button" data-edit="'+esc(x.id)+'">Editar</button><button type="button" class="secondary" data-no="'+esc(x.id)+'">No contactar</button><button type="button" class="danger" data-del="'+esc(x.id)+'">Borrar</button></td></tr>').join('');$('empty').hidden=visible.length>0}
+$('rows').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.edit)edit(b.dataset.edit);if(b.dataset.del)remove(b.dataset.del);if(b.dataset.no){const x=leads.find(l=>l.id===b.dataset.no);if(x){x.status='No contactar';x.next='No volver a contactar';persist()}}});
+$('search').addEventListener('input',render);$('filterStatus').addEventListener('change',render);
+function csvCell(v){return '"'+String(v??'').replace(/"/g,'""')+'"'}
+$('exportBtn').addEventListener('click',()=>{const cols=['business','niche','demo','contact','address','website','need','status','next','follow','value','createdAt','updatedAt'];const csv=[cols.join(','),...leads.map(x=>cols.map(k=>csvCell(x[k])).join(','))].join('\r\n');download('\uFEFF'+csv,'robe-prospectos.csv','text/csv;charset=utf-8')});
+$('backupBtn').addEventListener('click',()=>download(JSON.stringify({version:1,exportedAt:new Date().toISOString(),leads},null,2),'robe-prospectos-backup.json','application/json'));
+function download(data,name,type){const blob=new Blob([data],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();URL.revokeObjectURL(url)}
+$('importFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const obj=JSON.parse(await f.text()),items=Array.isArray(obj)?obj:obj.leads;if(!Array.isArray(items))throw Error('Formato no válido');if(!confirm('Importar '+items.length+' registros. Los registros con ID repetido se actualizarán. ¿Continuar?'))return;const map=new Map(leads.map(x=>[x.id,x]));items.forEach(x=>{if(x&&x.id&&x.business)map.set(x.id,x)});leads=Array.from(map.values());persist();alert('Respaldo importado.')}catch(err){alert('No se pudo importar el archivo: '+err.message)}finally{e.target.value=''}});
+render();
+})();
+</script>
+</body>
+</html>
