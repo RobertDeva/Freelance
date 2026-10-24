@@ -22,3 +22,11 @@ Esta carpeta contiene el plan para convertir el portafolio en un negocio freelan
 2. Preparar una lista inicial de negocios y registrar solo los datos profesionales necesarios.
 3. Contactar de forma individual con mensajes personalizados.
 4. Confirmar el método de cobro antes de aceptar un contrato.
+
+
+## Materiales añadidos para la fase comercial
+
+- [Plantillas de Telegram y correo](MENSAJES-TELEGRAM-CORREO.md)
+- [Compatibilidad de cobros QvaPay y cripto](COMPATIBILIDAD-COBROS.md)
+- [Plantilla de propuesta comercial](PROPUESTA-COMERCIAL.md)
+- [Plantilla CSV para prospectos](PLANTILLA-PROSPECTOS.csv)
