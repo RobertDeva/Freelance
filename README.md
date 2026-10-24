@@ -1,4 +1,4 @@
-# Freelance Lab — portafolio de tres demos funcionales
+# Robe Digital Studio — portafolio de tres demos
 
 Portafolio responsive con tres productos independientes, implementados con HTML, CSS y JavaScript vanilla. No necesita npm, compilación, librerías externas ni CDN.
 
