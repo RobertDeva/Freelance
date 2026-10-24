@@ -30,3 +30,12 @@ Esta carpeta contiene el plan para convertir el portafolio en un negocio freelan
 - [Compatibilidad de cobros QvaPay y cripto](COMPATIBILIDAD-COBROS.md)
 - [Plantilla de propuesta comercial](PROPUESTA-COMERCIAL.md)
 - [Plantilla CSV para prospectos](PLANTILLA-PROSPECTOS.csv)
+
+
+## Captación comercial — primera campaña
+
+- [Prospectos iniciales y fuentes públicas](PROSPECTOS-INICIALES.md)
+- [Prospectos iniciales en CSV](PROSPECTOS-INICIALES.csv)
+- [Plan de contacto sin coste de 14 días](CAMPANA-14-DIAS.md)
+
+Los prospectos son candidatos de investigación, no clientes confirmados. Verificar vigencia de los datos y legitimidad del contacto antes de escribir. No aceptar pagos hasta completar la comprobación de compatibilidad de [cobros](COMPATIBILIDAD-COBROS.md).
